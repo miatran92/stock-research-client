@@ -1,13 +1,11 @@
 import './App.css';
 import Nav from './components/nav/Nav';
-import {BrowserRouter, Routes, Route } from 'react-router-dom'
-// import Overview from './components/market/overview/Overview';
-import Gainers from './components/market/gainers/Gainers';
-import Losers from './components/market/losers/Losers';
-import MostActives from './components/market/mostactives/MostActives';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Losers from './pages/market/losers/Losers';
+import MostActives from './pages/market/mostactives/MostActives';
 import Home from './pages/home/Home';
 import StockPage from './pages/stockpage/StockPage';
-import Search from './components/searchbox/Search';
+import Gainers from './pages/market/gainers/Gainers';
 
 function App() {
   return (

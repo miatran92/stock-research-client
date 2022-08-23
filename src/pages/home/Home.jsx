@@ -1,9 +1,8 @@
-import Gainers from '../../components/market/gainers/Gainers'
-import Index from '../../components/market/index/Index'
-import Losers from '../../components/market/losers/Losers'
-import MostActives from '../../components/market/mostactives/MostActives'
-import Search from '../../components/searchbox/Search'
-import './Home.scss'
+import './Home.scss';
+import Index from '../market/index/Index';
+import Gainers from '../market/gainers/Gainers';
+import Losers from '../market/losers/Losers';
+import MostActives from '../market/mostactives/MostActives';
 function Home() {
   return (
     <div className='overviewContainer'>
@@ -21,7 +20,6 @@ function Home() {
           </div> */}
         </div>
       </div>
-
     </div>
   )
 }

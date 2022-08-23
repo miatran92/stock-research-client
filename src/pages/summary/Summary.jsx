@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
+import { Grid } from "react-loader-spinner"
 import { useParams } from "react-router-dom"
-import Search from "../../components/searchbox/Search"
 import { getStockSummary } from "../../config/api"
 import './Summary.scss'
 
@@ -10,7 +10,6 @@ import './Summary.scss'
 function Summary() {
     const { ticker } = useParams()
     const [isLoading, setIsLoading]= useState(true)
-
     const [summary, setSummary] = useState({
         price: [],
         financial: []
@@ -19,19 +18,23 @@ function Summary() {
     const fetchData = async () => {
         const response = await axios.get(getStockSummary(ticker));
         const responseData = Object.values(response.data)
-        console.log(responseData)
 
         setSummary({
             price: responseData[0].split("/"),
             financial: responseData[1].split("*"),
         })
+        setIsLoading(false)
     }
     useEffect(() => {
         fetchData()
-
     }, [])
   return (
-    <div className="summaryContainer">
+    isLoading ? (
+        <div>
+            <Grid />
+        </div>
+    ) : (
+<div className="summaryContainer">
         <h5>Summary</h5>
         <div className="sItems">
             <div className="sItem">
@@ -82,8 +85,9 @@ function Summary() {
             })}
             </div>    
         </div>
-         
     </div>
+    )
+    
   )
 }
 export default Summary
