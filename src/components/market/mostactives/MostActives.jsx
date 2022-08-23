@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { Grid } from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
+import { getMostActives } from '../../../config/api'
 import './MostActives.scss'
 
 function MostActives() {
@@ -12,7 +13,7 @@ function MostActives() {
   useEffect(() => {
     const fetchData = async() => {
       try {
-        const response = await axios.get('/overview/movers/most-active')
+        const response = await axios.get(getMostActives())
         const data = await response.data.topMovers
         const filterData = await data.splice(1)
         setActives(filterData)

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Grid } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
+import { getTopLosers } from '../../../config/api';
 
 function Losers() {
   const [losers, setLosers] = useState([])
@@ -9,7 +10,7 @@ function Losers() {
   useEffect(() => {
     const fetchData = async () => {
      try {
-         const response = await axios.get('/overview/movers/losers')
+         const response = await axios.get(getTopLosers())
          const data = await (response.data.topMovers)
          const filterData = await data.splice(1)
          setLosers(filterData)

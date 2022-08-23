@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Grid } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
+import { getTopGainers } from '../../../config/api';
 import './Gainers.scss';
 
 function Gainers() {
@@ -13,7 +14,7 @@ function Gainers() {
   useEffect(() => {
      const fetchData = async () => {
       try {
-          const response = await axios.get('/overview/movers/gainers')
+          const response = await axios.get(getTopGainers())
           const data = await response.data.topMovers
           const filterData = await data.splice(1)
           setGainers(filterData)

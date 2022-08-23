@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import {MdArrowDropDown, MdArrowDropUp} from 'react-icons/md'
 import { Bars } from 'react-loader-spinner'
+import { getIndexes } from '../../../config/api'
 
 import './Index.scss'
 function Index() {
@@ -11,7 +12,7 @@ function Index() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('/overview/market')
+      const response = await axios.get(getIndexes())
       setIndexData(response.data)
       setisLoading(false)
       console.log(response.data)
