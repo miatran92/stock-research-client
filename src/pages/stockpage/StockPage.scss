@@ -1,6 +1,17 @@
 .stockPageContainer{
     .stockPageWrapper{
         padding: 40px;
+        display: flex;
+        flex-direction: column;
+        .searchInput{
+            padding: 8px;
+            border-radius: 5px;
+            border: solid lightgray 0.5px;
+            text-align: center;
+            width: 30%;
+            margin: auto;
+
+        }
         .stockPageTop{
             display: flex;
             flex-direction: column;

@@ -18,8 +18,10 @@ function StockPage() {
         price: '',
         dayChange: '',
     });
+
+    const [input, setInput] = useState('')
     const fetchStock = async () => {
-        const response = await axios.get(getHistoricalData(ticker));
+        const response = await axios.get(getHistoricalData(input || ticker));
             
         const responseData = Object.values(response.data);
         setXValues(responseData[2]);
@@ -35,7 +37,7 @@ function StockPage() {
     }
     useEffect(() => {
         fetchStock();
-    }, [])
+    }, [input || ticker])
 
     // Chart data
     const data = {
@@ -79,11 +81,16 @@ function StockPage() {
                     }
          }
      };
-  return ( isLoading ? <div className="loading">
+  return ( isLoading ? 
+   <div className="loading">
     <Grid/>
   </div>
     : <div className="stockPageContainer">
         <div className="stockPageWrapper">
+        <input 
+        className='searchInput'
+        placeholder='Enter Ticker'
+        onChange={(e) => setInput(e.target.value)}/>
             <div className="stockPageTop">
                 <div className="infoBox">
                     <div className="coTitle">

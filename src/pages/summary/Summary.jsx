@@ -9,6 +9,8 @@ import './Summary.scss'
 
 function Summary() {
     const { ticker } = useParams()
+    const [isLoading, setIsLoading]= useState(true)
+
     const [summary, setSummary] = useState({
         price: [],
         financial: []
