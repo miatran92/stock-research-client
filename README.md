@@ -44,7 +44,7 @@ Front-end:
 - [Next.js](https://nextjs.org/)
 - [SCSS](https://sass-lang.com/)
 
-  Backend:
+Backend:
 
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
