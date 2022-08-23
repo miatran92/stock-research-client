@@ -1,0 +1,35 @@
+@import '../../style.scss';
+
+.overviewContainer{
+    .overviewWrapper{
+        // background-color: var(--main-bg);
+        padding: 20px;
+        .overviewTop{
+        }
+
+        .overviewBottom{
+            margin-top: 20px;
+            .topMovers{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                .topMoversItem{
+                    border: solid grey .5px;
+                    border-radius: 10px;
+                    height: 500px;
+                    width: 400px;
+                    overflow: auto;
+                    margin: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .news{
+                border: solid black;
+            }
+        }
+    }
+}

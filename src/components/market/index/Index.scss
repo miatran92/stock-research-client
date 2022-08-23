@@ -1,0 +1,28 @@
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.indexContainer{
+    .indexWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        .indexItem{
+            display: flex;
+            border: solid lightgray 0.5px;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.App {
+  /* text-align: center; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (min-width: 900px) {
+  .App{
+    top: 100px;
+    position: relative;
+  }
+}

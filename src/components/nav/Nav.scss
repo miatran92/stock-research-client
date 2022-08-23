@@ -1,0 +1,132 @@
+@import '../../style.scss';
+
+.navContainer{
+    height: 100px;
+    width: 100vw;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    background-color: var(--main-bg);
+    z-index: 9999;
+    // border-bottom: solid black 0.5px;
+
+    .navWrapper{
+        height: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navLeft{
+            flex: 4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            h1{
+                margin: 0;
+            }
+        }
+    }
+        .navRight{
+            flex: 1;
+            text-align: center;
+            .menuItems{
+                // z-index: 9;
+                top: 100px;
+                right: -100vw;
+                width: 50vw;
+                position: fixed;
+                height: calc(100vh - 70px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                // border-left: solid black 0.5px;
+                background-color: var(--main-bg);
+                &.active{
+                   right: 0;
+                   transition: all 0.5s ease-out;
+                }
+                a{
+                    text-decoration: none;
+                    width: 100%;
+                    li{
+                        background-color: var(--main-bg);
+                        text-align: center;
+                        list-style: none;
+                        font-weight: 600;
+                        padding: 15px 0px;
+                        // height: 100%;
+                        &:hover{
+                            color: var(--main-color);
+                            width: 100%;
+                            background-color: black;
+                            text-shadow:
+                              0 0 7px #fff,
+                              0 0 10px #fff,
+                              0 0 21px #fff,
+                              0 0 42px #0fa,
+                              0 0 82px #0fa,
+                              0 0 92px #0fa,
+                              0 0 102px #0fa,
+                              0 0 151px #0fa;
+                        }
+                    }
+                }
+                .menuItem{
+                    font-weight: 600;
+                    font-size: 5vw;
+                    width: 100%;
+                    padding: 20px;
+                    box-sizing: border-box;  
+                    &:hover{
+                        cursor: pointer;
+                    color: var(--main-color);
+                    }
+                }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .navContainer{
+        z-index: 99999;
+        width: 100vw;
+        position: fixed;
+        .navWrapper{
+            .navLeft{
+                flex: 1;
+            }
+            .navRight{
+                flex: 4;
+                .hamburger{
+                    display: none;
+                }
+                .menuItems{
+                    position: fixed;
+                    flex-direction: row;
+                    // width: 50%;
+                    right: 0;
+                    height: 100px;
+                    top: 0;
+                    a{
+                        color: black;
+                    }
+                    .menuItem{
+                        height: 100%;
+                        font-size: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
